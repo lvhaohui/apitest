@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>接口自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>接口自动化测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2020-07-18 21:54:56</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00.343200</p>
+<p class='attribute'><strong>Status:</strong> Error 6</p>
+
+<p class='description'>宇泽购物流程</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>script.login.TestLogin</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td>3</td>
+    <td><a href="javascript:showClassDetail('c1',3)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_login_0_login_success</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Traceback (most recent call last):
+  File "D:\program\apitest\venv\lib\site-packages\parameterized\parameterized.py", line 530, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "D:\program\apitest\script\login.py", line 21, in test_login
+    response = login_api(username,password)
+  File "D:\program\apitest\api\login01.py", line 11, in login_api
+    a = r.headers["cookie"]
+  File "D:\program\apitest\venv\lib\site-packages\requests\structures.py", line 54, in __getitem__
+    return self._store[key.lower()][1]
+KeyError: 'cookie'
+Traceback (most recent call last):
+  File "D:\program\apitest\venv\lib\site-packages\parameterized\parameterized.py", line 530, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "D:\program\apitest\script\login.py", line 21, in test_login
+    response = login_api(username,password)
+  File "D:\program\apitest\api\login01.py", line 11, in login_api
+    a = r.headers["cookie"]
+  File "D:\program\apitest\venv\lib\site-packages\requests\structures.py", line 54, in __getitem__
+    return self._store[key.lower()][1]
+KeyError: 'cookie'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_login_1_user_not_find</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        error</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.2: Traceback (most recent call last):
+  File "D:\program\apitest\venv\lib\site-packages\parameterized\parameterized.py", line 530, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "D:\program\apitest\script\login.py", line 21, in test_login
+    response = login_api(username,password)
+  File "D:\program\apitest\api\login01.py", line 11, in login_api
+    a = r.headers["cookie"]
+  File "D:\program\apitest\venv\lib\site-packages\requests\structures.py", line 54, in __getitem__
+    return self._store[key.lower()][1]
+KeyError: 'cookie'
+Traceback (most recent call last):
+  File "D:\program\apitest\venv\lib\site-packages\parameterized\parameterized.py", line 530, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "D:\program\apitest\script\login.py", line 21, in test_login
+    response = login_api(username,password)
+  File "D:\program\apitest\api\login01.py", line 11, in login_api
+    a = r.headers["cookie"]
+  File "D:\program\apitest\venv\lib\site-packages\requests\structures.py", line 54, in __getitem__
+    return self._store[key.lower()][1]
+KeyError: 'cookie'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_login_2_password_is_wrong</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
+        error</a>
+
+    <div id='div_ft1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.3: Traceback (most recent call last):
+  File "D:\program\apitest\venv\lib\site-packages\parameterized\parameterized.py", line 530, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "D:\program\apitest\script\login.py", line 21, in test_login
+    response = login_api(username,password)
+  File "D:\program\apitest\api\login01.py", line 11, in login_api
+    a = r.headers["cookie"]
+  File "D:\program\apitest\venv\lib\site-packages\requests\structures.py", line 54, in __getitem__
+    return self._store[key.lower()][1]
+KeyError: 'cookie'
+Traceback (most recent call last):
+  File "D:\program\apitest\venv\lib\site-packages\parameterized\parameterized.py", line 530, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "D:\program\apitest\script\login.py", line 21, in test_login
+    response = login_api(username,password)
+  File "D:\program\apitest\api\login01.py", line 11, in login_api
+    a = r.headers["cookie"]
+  File "D:\program\apitest\venv\lib\site-packages\requests\structures.py", line 54, in __getitem__
+    return self._store[key.lower()][1]
+KeyError: 'cookie'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>script.addgoods.AddGoods</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td>3</td>
+    <td><a href="javascript:showClassDetail('c2',3)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_addgoods_0_addgoods_success</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: Traceback (most recent call last):
+  File "D:\program\apitest\venv\lib\site-packages\parameterized\parameterized.py", line 530, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "D:\program\apitest\script\addgoods.py", line 24, in test_addgoods
+    response = addgoods_api(goods_name, category_id)
+  File "D:\program\apitest\api\addgoods01.py", line 17, in addgoods_api
+    r = requests.post(url,cookies = "a" , json=data, headers=headers)
+  File "D:\program\apitest\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\program\apitest\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\program\apitest\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\program\apitest\venv\lib\site-packages\requests\sessions.py", line 437, in prepare_request
+    cookies = cookiejar_from_dict(cookies)
+  File "D:\program\apitest\venv\lib\site-packages\requests\cookies.py", line 524, in cookiejar_from_dict
+    cookiejar.set_cookie(create_cookie(name, cookie_dict[name]))
+TypeError: string indices must be integers
+Traceback (most recent call last):
+  File "D:\program\apitest\venv\lib\site-packages\parameterized\parameterized.py", line 530, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "D:\program\apitest\script\addgoods.py", line 24, in test_addgoods
+    response = addgoods_api(goods_name, category_id)
+  File "D:\program\apitest\api\addgoods01.py", line 17, in addgoods_api
+    r = requests.post(url,cookies = "a" , json=data, headers=headers)
+  File "D:\program\apitest\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\program\apitest\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\program\apitest\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\program\apitest\venv\lib\site-packages\requests\sessions.py", line 437, in prepare_request
+    cookies = cookiejar_from_dict(cookies)
+  File "D:\program\apitest\venv\lib\site-packages\requests\cookies.py", line 524, in cookiejar_from_dict
+    cookiejar.set_cookie(create_cookie(name, cookie_dict[name]))
+TypeError: string indices must be integers
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_addgoods_1_category_id_is_not_find</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.2')" >
+        error</a>
+
+    <div id='div_ft2.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.2: Traceback (most recent call last):
+  File "D:\program\apitest\venv\lib\site-packages\parameterized\parameterized.py", line 530, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "D:\program\apitest\script\addgoods.py", line 24, in test_addgoods
+    response = addgoods_api(goods_name, category_id)
+  File "D:\program\apitest\api\addgoods01.py", line 17, in addgoods_api
+    r = requests.post(url,cookies = "a" , json=data, headers=headers)
+  File "D:\program\apitest\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\program\apitest\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\program\apitest\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\program\apitest\venv\lib\site-packages\requests\sessions.py", line 437, in prepare_request
+    cookies = cookiejar_from_dict(cookies)
+  File "D:\program\apitest\venv\lib\site-packages\requests\cookies.py", line 524, in cookiejar_from_dict
+    cookiejar.set_cookie(create_cookie(name, cookie_dict[name]))
+TypeError: string indices must be integers
+Traceback (most recent call last):
+  File "D:\program\apitest\venv\lib\site-packages\parameterized\parameterized.py", line 530, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "D:\program\apitest\script\addgoods.py", line 24, in test_addgoods
+    response = addgoods_api(goods_name, category_id)
+  File "D:\program\apitest\api\addgoods01.py", line 17, in addgoods_api
+    r = requests.post(url,cookies = "a" , json=data, headers=headers)
+  File "D:\program\apitest\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\program\apitest\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\program\apitest\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\program\apitest\venv\lib\site-packages\requests\sessions.py", line 437, in prepare_request
+    cookies = cookiejar_from_dict(cookies)
+  File "D:\program\apitest\venv\lib\site-packages\requests\cookies.py", line 524, in cookiejar_from_dict
+    cookiejar.set_cookie(create_cookie(name, cookie_dict[name]))
+TypeError: string indices must be integers
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_addgoods_2_goods_is_exists</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.3')" >
+        error</a>
+
+    <div id='div_ft2.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.3: Traceback (most recent call last):
+  File "D:\program\apitest\venv\lib\site-packages\parameterized\parameterized.py", line 530, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "D:\program\apitest\script\addgoods.py", line 24, in test_addgoods
+    response = addgoods_api(goods_name, category_id)
+  File "D:\program\apitest\api\addgoods01.py", line 17, in addgoods_api
+    r = requests.post(url,cookies = "a" , json=data, headers=headers)
+  File "D:\program\apitest\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\program\apitest\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\program\apitest\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\program\apitest\venv\lib\site-packages\requests\sessions.py", line 437, in prepare_request
+    cookies = cookiejar_from_dict(cookies)
+  File "D:\program\apitest\venv\lib\site-packages\requests\cookies.py", line 524, in cookiejar_from_dict
+    cookiejar.set_cookie(create_cookie(name, cookie_dict[name]))
+TypeError: string indices must be integers
+Traceback (most recent call last):
+  File "D:\program\apitest\venv\lib\site-packages\parameterized\parameterized.py", line 530, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "D:\program\apitest\script\addgoods.py", line 24, in test_addgoods
+    response = addgoods_api(goods_name, category_id)
+  File "D:\program\apitest\api\addgoods01.py", line 17, in addgoods_api
+    r = requests.post(url,cookies = "a" , json=data, headers=headers)
+  File "D:\program\apitest\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\program\apitest\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\program\apitest\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\program\apitest\venv\lib\site-packages\requests\sessions.py", line 437, in prepare_request
+    cookies = cookiejar_from_dict(cookies)
+  File "D:\program\apitest\venv\lib\site-packages\requests\cookies.py", line 524, in cookiejar_from_dict
+    cookiejar.set_cookie(create_cookie(name, cookie_dict[name]))
+TypeError: string indices must be integers
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>6</td>
+    <td>0</td>
+    <td>0</td>
+    <td>6</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

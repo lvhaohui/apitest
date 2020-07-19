@@ -1,0 +1,26 @@
+[
+  {
+    "case":"addgoods_success",
+    "goods_name": "iphoneXR",
+    "category_id": 1,
+    "status": 200,
+    "result": 0,
+    "msg": "success"
+  },
+  {
+    "case": "category_id is not find",
+    "goods_name": "kongtiao",
+    "category_id": 5,
+    "status": 200,
+    "result": 1,
+    "msg": "category_id is not find"
+  },
+  {
+    "case": "goods_is_exists",
+    "goods_name": "iphoneXR",
+    "category_id": 1,
+    "status": 200,
+    "result": 2,
+    "msg": "goods is exists"
+  }
+]

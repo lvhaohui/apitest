@@ -1,0 +1,17 @@
+2020-07-18 21:20:13,938 INFO login.py test_login 23 login_success:{'msg': 'success', 'result': 0, 'userid': 1}
+2020-07-18 21:20:13,948 INFO login.py test_login 23 user_not_find:{'msg': 'the user not find!', 'result': 2}
+2020-07-18 21:20:14,081 INFO login.py test_login 23 password_is_wrong:{'msg': 'your password is wrong!', 'result': 3}
+2020-07-18 21:20:14,101 INFO addgoods.py test_addgoods 26 category_id is not find{'msg': 'the category_id is not find.', 'result': 1}
+2020-07-18 21:23:22,340 INFO login.py test_login 23 login_success:{'msg': 'success', 'result': 0, 'userid': 1}
+2020-07-18 21:23:22,350 INFO login.py test_login 23 user_not_find:{'msg': 'the user not find!', 'result': 2}
+2020-07-18 21:23:22,486 INFO login.py test_login 23 password_is_wrong:{'msg': 'your password is wrong!', 'result': 3}
+2020-07-18 21:23:22,506 INFO addgoods.py test_addgoods 26 category_id is not find{'msg': 'the category_id is not find.', 'result': 1}
+2020-07-18 21:31:05,888 INFO login.py test_login 23 login_success:{'msg': 'success', 'result': 0, 'userid': 1}
+2020-07-18 21:31:05,897 INFO login.py test_login 23 user_not_find:{'msg': 'the user not find!', 'result': 2}
+2020-07-18 21:31:06,037 INFO login.py test_login 23 password_is_wrong:{'msg': 'your password is wrong!', 'result': 3}
+2020-07-18 21:31:06,051 INFO addgoods.py test_addgoods 26 addgoods_success{'goods_id': 263, 'msg': 'success', 'result': 0}
+2020-07-18 21:31:06,061 INFO addgoods.py test_addgoods 26 category_id is not find{'msg': 'the category_id is not find.', 'result': 1}
+2020-07-18 22:04:26,730 INFO login.py test_login 23 login_success:{'msg': 'success', 'result': 0, 'userid': 1}
+2020-07-18 22:04:26,746 INFO login.py test_login 23 user_not_find:{'msg': 'the user not find!', 'result': 2}
+2020-07-18 22:04:26,886 INFO login.py test_login 23 password_is_wrong:{'msg': 'your password is wrong!', 'result': 3}
+2020-07-18 22:20:10,886 INFO login.py test_login 23 login_success:{'msg': 'success', 'result': 0, 'userid': 1}
